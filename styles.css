@@ -1,0 +1,336 @@
+/* Grundinställningar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth; /* <-- NYTT för mjuk scrollning */
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f9f9f9;
+}
+
+/* Navigation och Hero */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://i.ibb.co/ZptN505W/smuf.png") no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+.logo {
+  width: 150px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li {
+  margin-left: 20px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.hero p {
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+.btn {
+  display: inline-block;
+  background: #0057ff;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #003bb3;
+}
+
+/* Footer */
+.footer {
+  padding: 25px 25px;
+  text-align: center;
+  background: #222;
+  color: #fff;
+  padding-top: 50px 25px;
+}
+.footer .btn {
+  margin-top: 15px;
+}
+.footer .small {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Responsivitet */
+@media(max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+  .nav-links {
+    margin-top: 10px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ----- Generella ändringar ----- */
+section {
+  padding: 40px 20px;   /* Kortare avstånd mellan sektioner */
+}
+h2 {
+  margin-bottom: 20px;  /* Mindre mellanrum under rubriker */
+}
+
+/* ----- Hero ----- */
+.hero {
+  padding: 60px 20px;   /* Lite kompaktare hero */
+}
+.hero h1 {
+  font-size: 2.8rem;    /* Större huvudrubrik */
+}
+.hero .lead {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+/* Om oss */
+
+.about {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.7;
+  color: #333;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #111;
+}
+
+.about p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.about p strong {
+  color: #000000; /* blå highlight för viktiga ord */
+}
+
+.about-highlight {
+  text-align: center;
+  font-size: 1.6rem !important;  /* lite större än vanlig text men inte överdrivet */
+  font-weight: 700 !important;   /* fet men inte max */
+  margin: 88px 50px;
+  max-width: 800px;
+  line-height: 1.4;
+  color: #fff;
+  background-color: #333; /* blå bakgrund */
+  padding: 15px 20px;         /* mindre padding */
+  border-radius: 12px;        /* rundade hörn */
+  box-shadow: 0 1.5px 4px rgba(0,0,0,0.12);
+}
+/* Prislista sektion */
+.pricing {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.pricing h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+/* Flexbox för paketen */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Paket */
+.package {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.package:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.package h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.package .price {
+  font-size: 1.8rem;
+  color: #0056b3;
+  margin-bottom: 20px;
+}
+
+.package ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.package ul li {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.package .btn {
+  display: inline-block;
+  background: #0056b3;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.package .btn:hover {
+  background: #003d80;
+}
+
+/* PREMIUM highlight */
+.package.premium {
+  border: 2px solid #1d4ed8;
+  background: #f0f5ff;
+  box-shadow: 0 8px 25px rgba(29,78,216,0.25);
+  transform: scale(1.05);
+}
+
+.package.premium:hover {
+  transform: scale(1.07);
+}
+/* Badge */
+.package .badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: #1d4ed8;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+/* Placera chatbot nere till höger */
+:root {
+  --chat--color-primary: #0a7cff;
+  --chat--color-secondary: #111827;
+  --chat--window--width: 380px;
+  --chat--window--height: 560px;
+  --chat--border-radius: 16px;
+}
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-right: auto; /* <-- flyttar till vänster */
+  margin-left: auto;     /* säkerställer att den inte drar åt höger */
+}
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  background-color: #222; /* mörk bakgrund gör ikonerna tydligare */
+}
+
+.social-links {
+  display: flex;
+  gap: 18px;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #000;               /* blå highlight vid hover */
+  transform: translateY(-4px);        /* lyft lite */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.social-links a img {
+  width: 22px;
+  height: 22px;
+  filter: invert(100%); /* gör ikonerna vita på mörk bakgrund */
+  transition: filter 0.3s ease;
+}
+
+.social-links a:hover img {
+  filter: invert(100%); /* håll dem vita även vid hover */
+}
+.social-links {
+  display: flex;
+  gap: 18px;
+  margin-top: -30px; /* flytta uppåt – justera värdet efter behov */
+}
+.social-links {
+  display: flex;
+  gap: 18px;
+  position: relative;
+  top: -40px; /* flyttar upp 40px */
+}
