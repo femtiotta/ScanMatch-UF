@@ -76,12 +76,6 @@ nav {
 
 /* Footer */
 .footer {
-  padding: 25px;
-  text-align: center;
-  background: #222;
-  color: #fff;
-}
-.footer {
   padding: 25px 25px;
   text-align: center;
   background: #222;
@@ -339,4 +333,10 @@ h2 {
   gap: 18px;
   position: relative;
   top: -40px; /* flyttar upp 40px */
+}
+.footer {
+  padding: 25px;
+  text-align: center;
+  background: #222;
+  color: #fff;
 }
