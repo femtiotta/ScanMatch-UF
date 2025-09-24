@@ -80,7 +80,7 @@ nav {
   text-align: center;
   background: #222;
   color: #fff;
-  padding-top: 50px 25px;
+  padding top: 50px 25px
 }
 .footer .btn {
   margin-top: 15px;
@@ -271,14 +271,6 @@ h2 {
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-/* Placera chatbot nere till höger */
-:root {
-  --chat--color-primary: #0a7cff;
-  --chat--color-secondary: #111827;
-  --chat--window--width: 380px;
-  --chat--window--height: 560px;
-  --chat--border-radius: 16px;
-}
 .social-links {
   display: flex;
   gap: 12px;
@@ -290,7 +282,6 @@ h2 {
   justify-content: center;
   background-color: #222; /* mörk bakgrund gör ikonerna tydligare */
 }
-
 .social-links {
   display: flex;
   gap: 18px;
