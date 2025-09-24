@@ -8,6 +8,15 @@
   <link rel="stylesheet"href="styles.css">
 </head>
 <body>
+  <!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScanMatch UF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
   <!-- Sektion 1: Hero -->
   <header class="hero">
 <nav>
@@ -43,20 +52,8 @@
         <li>Publicering på Sociala Medier (Instagram, TikTok, FaceBook m.fl.)</li>
         <li>Support via mail</li>
       </ul>
-      <a href="#contact" class="btn">Välj</a>
-    </div>
+<a href="#" class="btn open-demo">Välj</a>
 
-    <!-- Medium -->
-    <div class="package">
-      <h3>Medium</h3>
-
-      <ul>
-        <li>Per jobbannons</li>
-        <li>Hantering av ansökningar</li>
-        <li>CV & personliga brev m.fl.</li>
-        <li>Support via mail</li>
-      </ul>
-      <a href="#contact" class="btn">Välj</a>
     </div>
 
     <!-- Premium -->
@@ -66,11 +63,12 @@
 
       <ul>
        <li>Per jobbannons</li>
-        <li>Standard + Medium</li>
-        <li>Annons + ansökningshantering</li>
+        <li>Standard + Hantering av ansökningar</li>
+        <li>CV & personliga brev m.fl </li>
         <li>Prioriterad support via mail</li>
       </ul>
-      <a href="#contact" class="btn">Välj</a>
+<a href="#" class="btn open-demo">Välj</a>
+
 </div>
   </div>
 </section>
@@ -93,7 +91,7 @@
 Vi vet att rekrytering ofta kan vara <strong>tidskrävande</strong> och resursintensivt. För många arbetsgivare innebär det en balansgång mellan att snabbt fylla en tjänst och att samtidigt säkerställa att <strong>rätt person</strong> hamnar på <strong>rätt plats.</strong> Här kommer <strong>vår lösning</strong> in.   
      
 
-<p> Genom en <strong>kombination</strong> av <strong>AI teknologi</strong> och <strong>manuell granskning</strong> analyserar vi inkommande ansökningar, med särskilt fokus på CV och personliga brev. Resultatet blir en tydlig och lättöverskådlig urvalsrapport som sammanfattar de kandidater som bäst matchar den aktuella tjänsten. Rapporten levereras alltid inom <strong>max 1–2 arbetsdagar,</strong> vilket ger arbetsgivaren en <strong>snabb</strong> och <strong>tillförlitlig</strong> grund att fatta beslut på. 
+<p> Genom en <strong>kombination</strong> av <strong>AI teknologi</strong> och <strong>manuell granskning</strong> analyserar vi inkommande ansökningar, med särskilt fokus på CV och personliga brev. Resultatet blir en tydlig och lättöverskådlig urvalsrapport som sammanfattar de kandidater som bäst matchar den aktuella tjänsten. Rapporten levereras alltid inom <strong>max 1–2 arbetsdagar,</strong> vilket ger arbetsgivaren en <strong>snabb</strong> och <strong>tillförlitlig</strong> grund att fatta beslut för vem eller vilka det är ni ska kalla till intevju. 
   
    </p>
     </div>
@@ -132,7 +130,7 @@ Vårt långsiktiga <strong>mål</strong> är att bli en självklar <strong>partn
       <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 ScanMatch UF. Alla rättigheter förbehållna. Vill ni se våra avtalsmallar, bli kontaktad eller boka ett möte? Skriv till vår <strong>ChatBOT AI</strong>.
+      <p>&copy; 2025 ScanMatch UF. Alla rättigheter förbehållna.
                                    
     </div>
 </section>
@@ -178,97 +176,6 @@ Vårt långsiktiga <strong>mål</strong> är att bli en självklar <strong>partn
   });
 </script>
 
-<!-- Din footertext – lägg bara till id på länken -->
-<footer class="site-footer">
-  <div class="container">
-    <p>
-      <a href="#contact" id="openChatLink"></a></p>
-  </div>
-</footer>
 
-<!-- Behövs så att n8n kan montera widgeten (target #n8n-chat) -->
-<div id="n8n-chat"></div>
 
-<!-- n8n chat CSS -->
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-
-<!-- Din egen CSS för widgeten (färger, storlek osv.) -->
-<style>
-  /* Tema för n8n-widgeten (enligt @n8n/chat-dokumentationen) */
-  :root {
-    --chat--color-primary: #0a7cff;            /* bubblans primärfärg */
-    --chat--color-secondary: #111827;          /* användarbubbla/kontrast */
-    --chat--toggle--size: 64px;                /* storlek på flytande knapp */
-    --chat--window--width: 380px;              /* widgetens fönsterbredd */
-    --chat--window--height: 560px;             /* widgetens fönsterhöjd */
-    --chat--border-radius: 16px;               /* rundade hörn */
-  }
-
-  /* (frivilligt) gör länken “ChatBOT AI” tydligare */
-  #openChatLink {
-    font-weight: 600;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-</style>
-
-<!-- Init + auto-open + öppna vid klick på "ChatBOT AI" -->
-<script type="module">
-  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-  // 1) Initiera widgeten
-  createChat({
-    webhookUrl: 'https://scanmatchuf.app.n8n.cloud/webhook/d9224fd4-8134-4a1c-bdf9-b16a11a450a6/chat',
-    target: '#n8n-chat',
-    mode: 'window',
-    showWelcomeScreen: true,
-    loadPreviousSession: true
-  });
-
-  // Hjälpfunktion som öppnar widgeten genom att klicka på toggle-knappen
-  function openN8nChat() {
-    const clickToggleIfClosed = () => {
-      const btn = document.querySelector('.n8n-chat-widget__toggle');
-      if (!btn) return false;
-
-      // Försök att bara öppna (inte stänga) om aria-expanded finns
-      const expanded = btn.getAttribute('aria-expanded');
-      if (expanded !== 'true') btn.click();
-
-      // Försök fokusera textfältet strax efter öppning
-      setTimeout(() => {
-        const input = document.querySelector('textarea, .n8n-chat-widget__textarea');
-        if (input) input.focus();
-      }, 150);
-
-      return true;
-    };
-
-    // Om knappen inte finns ännu, vänta tills widgeten monterats
-    if (!clickToggleIfClosed()) {
-      const obs = new MutationObserver(() => {
-        if (clickToggleIfClosed()) obs.disconnect();
-      });
-      obs.observe(document.body, { childList: true, subtree: true });
-    }
-  }
-
-  // 2) Öppna automatiskt när sidan laddat
-  window.addEventListener('DOMContentLoaded', () => {
-    // Ge widgeten en kort stund att montera sig
-    setTimeout(openN8nChat, 300);
-  });
-
-  // 3) Öppna när man klickar på länken “ChatBOT AI”
-  const openLink = document.getElementById('openChatLink');
-  if (openLink) {
-    openLink.addEventListener('click', (e) => {
-      e.preventDefault();       // undvik att hoppa till #contact
-      openN8nChat();
-    });
-  }
-</script>
     
-    
-</body>
-</html>
